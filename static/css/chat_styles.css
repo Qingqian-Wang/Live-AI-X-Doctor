@@ -20,8 +20,8 @@ body {
 .logo {
     display: block;
     margin-bottom: 20px;
-    width: 200px;
-    /* Adjust as necessary */
+
+    width: 150px; /* Adjust as necessary */
     height: auto;
 }
 
