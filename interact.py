@@ -34,4 +34,3 @@ def interact_once(user_input, messages):
   
   messages.append({"role":"assistant", "content": content_without_newlines})
   return content_without_newlines
-
