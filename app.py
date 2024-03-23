@@ -11,9 +11,7 @@ app = Flask(__name__)
 dataset = []
 
 @app.route('/map')
-# def hello_world():
-def hospitals_map():
-
+def map():
     # Replace 'YOUR_ENV_VARIABLE' with the actual name of your environment variable
     api_key = os.environ.get('GOOGLE_MAPS_API_KEY')
     return render_template('map.html', api_key=api_key)
@@ -33,7 +31,8 @@ def conversation_input():
         content = interact_once(message, dataset)
         print(content)
         print(dataset)
-    return render_template('chat_interface.html')
+    return render_template('index.html')
+
 
 
 @app.route('/diagnosis-result', methods=['POST'])
@@ -44,7 +43,7 @@ def diagnosis_result():
     # Process the data here, for example, save it to a database or perform some calculations.
 
     # For now, we'll just render a simple confirmation page:
-    return render_template('chat_interface.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
