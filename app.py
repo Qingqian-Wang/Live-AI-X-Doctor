@@ -1,13 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 from dotenv import load_dotenv
-from flask import request
+from interact import interact_once
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
 
+dataset = []
 
 @app.route('/map')
 def map():
@@ -22,12 +23,16 @@ def diagnosis_page():
     return render_template('diagnosis.html')
 
 
+
 @app.route('/', methods=['GET', 'POST'])
 def conversation_input():
     if request.method == 'POST':
         message = request.form['message']
-        print(message)
+        content = interact_once(message, dataset)
+        print(content)
+        print(dataset)
     return render_template('index.html')
+
 
 
 @app.route('/diagnosis-result', methods=['POST'])
