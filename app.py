@@ -12,7 +12,6 @@ app = Flask(__name__)
 def hello_world():
     # Replace 'YOUR_ENV_VARIABLE' with the actual name of your environment variable
     api_key = os.environ.get('GOOGLE_MAPS_API_KEY')
-    print(api_key)
     return render_template('index.html', api_key=api_key)
 
 
