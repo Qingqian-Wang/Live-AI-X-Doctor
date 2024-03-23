@@ -1,10 +1,10 @@
-
 body {
     font-family: 'Arial', sans-serif;
     background: #f4f7f6;
     margin: 0;
     padding: 0;
 }
+
 .container {
     display: flex;
 }
@@ -13,13 +13,15 @@ body {
     background-color: #2c3e50;
     color: #ecf0f1;
     padding: 10px;
-    width: 250px; /* Adjust as necessary */
+    width: 250px;
+    /* Adjust as necessary */
 }
 
 .logo {
     display: block;
     margin-bottom: 20px;
-    width: 200px; /* Adjust as necessary */
+    width: 200px;
+    /* Adjust as necessary */
     height: auto;
 }
 
@@ -31,6 +33,9 @@ body {
     margin-bottom: 20px;
     color: #fff;
     cursor: pointer;
+    text-align: center;
+    width: 200px;
+    font-weight: bold;
 }
 
 .chat-list {
@@ -57,12 +62,13 @@ body {
     margin: auto;
     background: #fff;
     height: 90vh;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     margin-top: 40px;
 }
+
 .message {
     padding: 10px;
     margin: 10px;
@@ -70,17 +76,21 @@ body {
     background: #e7ecef;
     display: inline-block;
 }
+
 .message img {
     max-width: 100px;
     max-height: 100px;
     margin-right: 10px;
 }
+
 .sender {
     text-align: right;
 }
+
 .sender .message {
     background: #d1f4c6;
 }
+
 .chat-input {
     border: none;
     padding: 15px;
@@ -89,22 +99,25 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
     outline: none;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
+
 .chat-interface {
     flex: 1;
     overflow-y: auto;
     padding-bottom: 20px;
 }
+
 .chat-footer {
     border-top: 1px solid #e7ecef;
     display: flex;
     justify-content: space-between;
-    padding: 10px;  
+    padding: 10px;
     position: relative;
 }
+
 .message-form {
-    display: flex; 
+    display: flex;
     width: 90%;
 }
 
@@ -116,9 +129,32 @@ body {
     border-radius: 4px;
     cursor: pointer;
     outline: none;
-    width: 80px; 
+    width: 80px;
     height: 40px;
-    position: absolute; /* Absolute position the send button */
-    right: 10px; /* Position from the right */
-    bottom: 10px; /* Position from the bottom */
+    position: absolute;
+    /* Absolute position the send button */
+    right: 10px;
+    /* Position from the right */
+    bottom: 10px;
+    /* Position from the bottom */
+}
+
+
+.site-footer {
+    background-color: #7b7b7b;
+    /* 灰色背景 */
+    color: #fffdfd;
+    /* 字体颜色 */
+    text-align: center;
+    /* 文字居中 */
+    padding: 10px 0;
+    /* 上下填充 */
+    margin-top: 20px;
+    /* 顶部外边距 */
+}
+
+.container-footer {
+    margin: 0 auto;
+    padding: 0 15px;
+    /* 内边距 */
 }
