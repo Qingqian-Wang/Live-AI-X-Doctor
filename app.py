@@ -1,19 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 from dotenv import load_dotenv
-from flask import request
+from interact import interact_once
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
 
+dataset = []
 
-@app.route('/')
-def hello_world():
+@app.route('/map')
+# def hello_world():
+def hospitals_map():
+
     # Replace 'YOUR_ENV_VARIABLE' with the actual name of your environment variable
     api_key = os.environ.get('GOOGLE_MAPS_API_KEY')
-    return render_template('index.html', api_key=api_key)
+    return render_template('map.html', api_key=api_key)
 
 
 @app.route('/diagnosis')
@@ -22,18 +25,14 @@ def diagnosis_page():
     return render_template('diagnosis.html')
 
 
-@app.route('/map')
-def hospitals_map():
-    # call API
-    # Render a template or perform other logic for the hospitals map page
-    return render_template('map.html')
 
-
-@app.route('/conversation', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def conversation_input():
     if request.method == 'POST':
         message = request.form['message']
-        print(message)
+        content = interact_once(message, dataset)
+        print(content)
+        print(dataset)
     return render_template('chat_interface.html')
 
 
