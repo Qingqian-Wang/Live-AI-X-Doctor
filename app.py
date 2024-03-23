@@ -9,11 +9,11 @@ load_dotenv()
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
+@app.route('/map')
+def map():
     # Replace 'YOUR_ENV_VARIABLE' with the actual name of your environment variable
     api_key = os.environ.get('GOOGLE_MAPS_API_KEY')
-    return render_template('index.html', api_key=api_key)
+    return render_template('map.html', api_key=api_key)
 
 
 @app.route('/diagnosis')
@@ -22,19 +22,12 @@ def diagnosis_page():
     return render_template('diagnosis.html')
 
 
-@app.route('/map')
-def hospitals_map():
-    # call API
-    # Render a template or perform other logic for the hospitals map page
-    return render_template('map.html')
-
-
-@app.route('/conversation', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def conversation_input():
     if request.method == 'POST':
         message = request.form['message']
         print(message)
-    return render_template('chat_interface.html')
+    return render_template('index.html')
 
 
 @app.route('/diagnosis-result', methods=['POST'])
@@ -45,7 +38,7 @@ def diagnosis_result():
     # Process the data here, for example, save it to a database or perform some calculations.
 
     # For now, we'll just render a simple confirmation page:
-    return render_template('chat_interface.html')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':

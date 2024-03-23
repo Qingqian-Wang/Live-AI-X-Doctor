@@ -1,22 +1,49 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Neighborhood Hospital</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <script>
-        // Make the API key available as a JavaScript variable
-        const googleMapsApiKey = "{{ api_key }}";
-    </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&amp;libraries=places&amp;callback=initMap"
-        async defer></script>
-    <script src="../static/js/script.js" defer=""></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Interface</title>
+<link rel="stylesheet" href="../static/css/chat_styles.css">
+
 </head>
 
 <body>
-    <h1>Find nearby Hospitals</h1>
-    <div id="map"></div>
+<div class="container">
+  <div class="sidebar">
+    <img src="../static/img/logo.jpg" alt="Company Logo" class="logo">
+    <a href="{{ url_for('diagnosis_page') }}" class="new-chat-button-link">
+      <button class="new-chat-button">Input Hospital Diagnosis</button>
+    </a>
+    <a href="{{ url_for('map') }}" class="new-chat-button-link">
+      <button class="new-chat-button">Hospitals Map</button>
+    </a>
+    <!-- <ul class="chat-list">
+      <li class="chat-list-item active">Main conversation</li>
+      <li class="chat-list-item">Chat history</li>
+      <li class="chat-list-item">Saved answers</li>
+    </ul> -->
+  </div>
+  <div class="chat-container">
+    <div class="chat-interface">
+      <!-- Messages will go here -->
+      <div class="message">Hello! How can I assist you today?</div>
+      <div class="sender">
+        <div class="message">I'm looking for an airplane ticket from Milan to Los Angeles.</div>
+      </div>
+      <!-- More messages -->
+    </div>
+    
+    <div class="chat-footer">
+      <form action="{{ url_for('conversation_input') }}" method="post" class="message-form">
+        <textarea type="text" name="message" class="chat-input" placeholder="Your text here..."></textarea>
+        <button type="submit" class="send-button">Send</button>
+      </form>    
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>
