@@ -213,3 +213,20 @@ a {
     cursor: pointer;
 }
 
+.bottom-right {
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.bottom-right svg {
+    /* 根据需要调整SVG的大小 */
+    width: 40px; 
+    height: 40px;
+}
+
+.bottom-right .number {
+    margin-left: 10px; /* 数字和图标之间的距离 */
+}

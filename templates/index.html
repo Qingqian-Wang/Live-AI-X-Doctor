@@ -16,11 +16,23 @@
     </div>
 
 
+
+
+
     <div id="percentage-container" class="percentage-container">
         {{ health_rating }}
     </div>
     <a href="{{url_for('update_number')}}" type="button" method="get" class="update-button">Update Number</a>
 
+
+    <div class="bottom-right">
+        <img src="../static/image/thermometer-svgrepo-com.svg" alt="Icon" style="width: 40px; height: 40px;"> <!-- 引用SVG文件 -->
+        <span class="number">38.7</span> <!-- 显示的数字 -->
+        <img src="../static/image/cardiogram-heart-svgrepo-com.svg" alt="Icon" style="width: 40px; height: 40px;"> <!-- 引用SVG文件 -->
+        <span class="number">85</span> <!-- 显示的数字 -->
+        <img src="../static/image/oxygen-breath-svgrepo-com.svg" alt="Icon" style="width: 40px; height: 40px;"> <!-- 引用SVG文件 -->
+        <span class="number">95</span> <!-- 显示的数字 -->
+    </div>
 
     <div class="chat-footer">
         <form action="{{ url_for('conversation_input') }}" method="post" class="message-form">
