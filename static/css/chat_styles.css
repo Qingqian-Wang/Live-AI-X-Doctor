@@ -159,17 +159,13 @@ a {
     background-color: #7b7b7b;
     color: #fffdfd;
     text-align: center;
-    /* 文字居中 */
     padding: 10px 0;
-    /* 上下填充 */
     margin-top: 10px;
-    /* 顶部外边距 */
 }
 
 .container-footer {
     margin: 0 auto;
     padding: 0 15px;
-    /* 内边距 */
 }
 
 .message {
@@ -195,9 +191,7 @@ a {
 .chat-interface {
     display: flex;
     flex-direction: column;
-    /* 使得消息从上到下排列 */
     align-items: flex-start;
-    /* 默认左对齐 */
 }
 
 .Health_container {
@@ -224,7 +218,6 @@ a {
     border-radius: 4px;
     overflow: hidden;
     font-size: 7em;
-    /* 将字体大小调整为3em */
     text-align: center;
 
     z-index: 1000;

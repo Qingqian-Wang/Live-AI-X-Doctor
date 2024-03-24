@@ -66,7 +66,7 @@ function createMarker(place, map, userLocation) {
 
 function handleLocationError(browserHasGeolocation, pos, map) {
     alert(browserHasGeolocation ?
-        '地理定位服务失败，请确保您允许了位置访问权限。' :
-        '错误：您的浏览器不支持地理定位。');
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
     map.setCenter(pos);
 }
