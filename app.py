@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import os
 from dotenv import load_dotenv
 from interact import interact_once
@@ -23,14 +23,19 @@ def diagnosis_page():
     return render_template('diagnosis.html')
 
 
+@app.route('/',methods=['POST'])
+def generate_ans():
+    message = request.form['message']
+    return Response(interact_once(message, dataset), mimetype='text/event-stream')
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/', methods=['GET'])
 def conversation_input():
-    if request.method == 'POST':
-        message = request.form['message']
-        content = interact_once(message, dataset)
-        print(content)
-        print(dataset)
+    # if request.method == 'POST':
+    #     message = request.form['message']
+    #     content = interact_once(message, dataset)
+    #     print(content)
+    #     print(dataset)
     return render_template('index.html')
 
 

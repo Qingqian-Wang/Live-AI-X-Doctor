@@ -30,7 +30,9 @@ def interact_once(user_input, messages):
   for chunk in stream:
       if chunk.choices[0].delta.content is not None:
           # 去除内容中的换行符
-          content_without_newlines += chunk.choices[0].delta.content.replace('\n', '')
+          curr_line =  chunk.choices[0].delta.content.replace('\n', '')
+          yield curr_line
+          content_without_newlines += curr_line
   
   messages.append({"role":"assistant", "content": content_without_newlines})
   return content_without_newlines

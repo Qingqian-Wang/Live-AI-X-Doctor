@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+    <form id="chat-form">
+        <input type="text" id="message" placeholder="Type a message...">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="responses"></div>
+
+    <script>
+        document.getElementById('chat-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            const formData = new FormData();
+            formData.append('message', message);
+
+            // 使用fetch发送POST请求
+            const responseStream = await fetch('/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            // 使用EventSource监听流式响应
+            const reader = responseStream.body.getReader();
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                // 将回应显示在页面上
+                document.getElementById('responses').textContent += new TextDecoder().decode(value) + '\n';
+            }
+        };
+    </script>
+</body>
+</html>
