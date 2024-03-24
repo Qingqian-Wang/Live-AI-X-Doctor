@@ -1,76 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Diagnosis Input Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 20px;
-        }
+{% extends "base.html" %}
 
-        .form-container {
-            background: #ffffff;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+{% block title %}Diagnosis Input Form{% endblock %}
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/diagnosis.css') }}"> <!-- 这里使用Flask的url_for来确保路径正确 -->
+{% endblock %}
 
-        label {
-            display: block;
-            margin: 15px 0 5px;
-        }
+{% block content %}
+<div class="form-container">
+    <h1>Input Hospital Diagnosis</h1>
+    <form action="{{ url_for('diagnosis_result') }}" method="post">
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" name="patient_name" style="width:150px;" required>
 
-        input[type=text],
-        textarea {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+        <label for="symptoms">Symptoms:</label>
+        <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
 
-        .submit-button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
+        <label for="diagnosis">Diagnosis:</label>
+        <textarea id="diagnosis" name="diagnosis" required></textarea>
 
-        .submit-button:hover {
-            background-color: #4cae4c;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="form-container">
-        <h1>Input Hospital Diagnosis</h1>
-        <form action="{{ url_for('diagnosis_result') }}" method="post">
-            <label for="patient_name">Patient Name:</label>
-            <input type="text" id="patient_name" name="patient_name" style="width:150px;" required>
-
-            <label for="symptoms">Symptoms:</label>
-            <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
-
-            <label for="diagnosis">Diagnosis:</label>
-            <textarea type="text" id="diagnosis" name="diagnosis" required></textarea>
-
-            <input type="submit" value="Submit Diagnosis" class="submit-button">
-        </form>
-    </div>
-</body>
-</html>
+        <input type="submit" value="Submit Diagnosis" class="submit-button">
+    </form>
+</div>
+{% endblock %}
