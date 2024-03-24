@@ -200,29 +200,36 @@ a {
     /* 默认左对齐 */
 }
 
+.Health_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+}
+
+.Health_des {
+    font-size: 18pt;
+}
+
 .percentage-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 160px;
-    /* Adjust the height as needed */
+    height: 100px;
     width: 160px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
-    font-size: 5em;
-    /* Adjust the font size as needed */
+    font-size: 7em;
+    /* 将字体大小调整为3em */
     text-align: center;
-    position: fixed;
-    /* 或者 absolute，取决于需求 */
-    top: 10px;
-    /* 或者任何合适的值 */
-    right: 10px;
-    /* 或者任何合适的值 */
+
     z-index: 1000;
-    /* 确保按钮显示在其他元素之上 */
 }
+
 
 .update-button {
     display: inline-block;
@@ -316,4 +323,31 @@ a {
 .bottom-right .number+img {
     margin-left: 20px;
     /* 图标和前面的数字之间的距离 */
+}
+
+
+.buttons-container {
+    display: flex;
+    /* 启用Flexbox */
+    justify-content: flex-end;
+    /* 使子元素靠右对齐 */
+}
+
+.common-button {
+    /* 之前定义的按钮样式 */
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.common-button:hover {
+    background-color: #45a049;
 }
