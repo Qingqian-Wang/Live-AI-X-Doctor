@@ -1,10 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    text-align: center;*/
+/*}*/
+#title{
     text-align: center;
 }
-
 #map {
     height: 400px;
     width: 80%;
     margin: auto;
 }
+
+

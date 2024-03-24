@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Percentage Display</title>
+    <style>
+        .percentage-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 160px; /* Adjust the height as needed */
+            width: 160px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 5em; /* Adjust the font size as needed */
+            text-align: center;
+        }
+
+        .update-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="percentage-container" class="percentage-container">
+        {{ health_rating }}
+    </div>
+    <button href="{{url_for('update_number')}}" class="update-button">Update Number</button>
+</body>
+</html>
+
+@app.route('/')
+def defaultfunctionforpresenting():
+    # Assuming you have a variable `health_rating` you want to display initially.
+    health_rating = 100  # This should be an integer between 70 and 100.
+    return render_template('', health_rating=health_rating)
+
+@app.route('/update-number', methods=['GET'])
+def update_number():
+    # Your logic to generate a new health rating
+    new_health_rating = ...  # This should be an integer between 0 and 100.
+
+    # Return the new health rating as JSON
+    return render_template('', health_rating=new_health_rating)

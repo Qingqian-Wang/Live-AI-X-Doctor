@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Neighborhood Hospital{% endblock %}
+
+{% block additional_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block additional_js %}
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap"></script>
+{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>Find nearby Hospitals</h1>
+</div>
+
+<div id="map"></div> <!-- Map will be rendered here -->
+{% endblock %}

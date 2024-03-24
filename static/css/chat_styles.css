@@ -1,36 +1,55 @@
-
 body {
     font-family: 'Arial', sans-serif;
     background: #f4f7f6;
     margin: 0;
     padding: 0;
 }
+
 .container {
     display: flex;
+    flex-grow: 1;
+    /* 允许内容区域填充剩余空间 */
 }
 
 .sidebar {
     background-color: #2c3e50;
+    flex: 0 0 250px;
+    /* 设置侧边栏宽度，不允许伸缩 */
+    height: auto;
+    /* 调整高度为自动，以适应内容 */
     color: #ecf0f1;
     padding: 10px;
-    width: 250px; /* Adjust as necessary */
+    width: 250px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .logo {
     display: block;
-    margin-bottom: 20px;
-    width: 200px; /* Adjust as necessary */
+    margin: 0 auto 20px;
+    /* Centers the logo within the sidebar */
+    width: 50%;
+    /* Ensures logo scales within the sidebar width */
     height: auto;
 }
 
 .new-chat-button {
     background-color: #18bc9c;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border-radius: 4px;
     margin-bottom: 20px;
     color: #fff;
     cursor: pointer;
+    display: block;
+    /* Ensures buttons are block-level for full-width */
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    /* Slightly larger font for readability */
+    font-weight: bold;
 }
 
 .chat-list {
@@ -56,13 +75,16 @@ body {
     max-width: 768px;
     margin: auto;
     background: #fff;
+    border-radius: 15px;
     height: 90vh;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     margin-top: 40px;
+    flex: 1;
 }
+
 .message {
     padding: 10px;
     margin: 10px;
@@ -70,17 +92,21 @@ body {
     background: #e7ecef;
     display: inline-block;
 }
+
 .message img {
     max-width: 100px;
     max-height: 100px;
     margin-right: 10px;
 }
+
 .sender {
-    text-align: right;
+    text-align: left;
 }
+
 .sender .message {
     background: #d1f4c6;
 }
+
 .chat-input {
     border: none;
     padding: 15px;
@@ -89,22 +115,25 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
     outline: none;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
+
 .chat-interface {
     flex: 1;
     overflow-y: auto;
     padding-bottom: 20px;
 }
+
 .chat-footer {
     border-top: 1px solid #e7ecef;
     display: flex;
     justify-content: space-between;
-    padding: 10px;  
+    padding: 10px;
     position: relative;
 }
+
 .message-form {
-    display: flex; 
+    display: flex;
     width: 90%;
 }
 
@@ -116,9 +145,202 @@ body {
     border-radius: 4px;
     cursor: pointer;
     outline: none;
-    width: 80px; 
+    width: 80px;
     height: 40px;
-    position: absolute; /* Absolute position the send button */
-    right: 10px; /* Position from the right */
-    bottom: 10px; /* Position from the bottom */
+    position: absolute;
+    /* Absolute position the send button */
+    right: 10px;
+    /* Position from the right */
+    bottom: 10px;
+    /* Position from the bottom */
+}
+
+.site-footer {
+    background-color: #7b7b7b;
+    color: #fffdfd;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.container-footer {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.message {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.user-message {
+    background-color: lightgray;
+    align-self: flex-start;
+    /* Align to the right */
+}
+
+.ai-message {
+    background-color: lightblue;
+    align-self: flex-start;
+    /* Align to the left */
+    max-width: 65%;
+}
+
+.chat-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Health_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+}
+
+.Health_des {
+    font-size: 18pt;
+}
+
+.percentage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 7em;
+    text-align: center;
+
+    z-index: 1000;
+}
+
+
+.update-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* 绿色背景 */
+    color: white;
+    /* 白色文字 */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    /* 圆角边框 */
+    transition: background-color 0.3s, color 0.3s;
+    /* 过渡动画 */
+}
+
+.update-button:hover {
+    background-color: #45a049;
+    /* 鼠标悬停时的背景颜色 */
+    color: #fff;
+    /* 鼠标悬停时的文字颜色 */
+}
+
+.ai-doctor-image {
+    width: 75px;
+    /* 设置图片宽度 */
+    height: 75px;
+    /* 设置图片高度 */
+    margin-right: 20px;
+    /* 图片和文本之间的间距 */
+}
+
+.ai-message {
+    background-color: #98FB98;
+    /* 消息背景颜色 */
+    padding: 10px;
+    /* 消息内边距 */
+    border-radius: 10px;
+    /* 消息边框圆角 */
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    margin-bottom: 10px;
+    /* 消息之间的间距 */
+    width: fit-content;
+    /* 容器宽度适应内容 */
+}
+
+.user-message-container {
+    justify-content: flex-end;
+    /* 用户消息靠右对齐 */
+    display: flex;
+    width: 100%;
+    /* 占满整个父容器宽度 */
+}
+
+.ai-message-container {
+    justify-content: flex-start;
+    /* AI消息靠左对齐 */
+    display: flex;
+    width: 100%;
+    /* 占满整个父容器宽度 */
+}
+
+.bottom-right {
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.bottom-right .number {
+    margin-left: 10px;
+    /* 数字和图标之间的距离 */
+}
+
+*/ .bottom-right img+.number {
+    margin-left: 10px;
+    /* 数字和前面的图标之间的距离 */
+}
+
+.bottom-right .number+img {
+    margin-left: 20px;
+    /* 图标和前面的数字之间的距离 */
+}
+
+
+.buttons-container {
+    display: flex;
+    /* 启用Flexbox */
+    justify-content: flex-end;
+    /* 使子元素靠右对齐 */
+}
+
+.common-button {
+    /* 之前定义的按钮样式 */
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.common-button:hover {
+    background-color: #45a049;
 }

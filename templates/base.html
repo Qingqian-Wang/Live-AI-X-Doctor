@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/chat_styles.css">
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <script>
+        const googleMapsApiKey = "{{ api_key }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block additional_css %}{% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="../static/img/logo.jpg" alt="Company Logo" class="logo">
+            <a href="{{ url_for('diagnosis_page') }}" class="new-chat-button-link">
+                <button class="new-chat-button">Input Hospital Diagnosis</button>
+            </a>
+            <a href="{{ url_for('map') }}" class="new-chat-button-link">
+                <button class="new-chat-button">Hospitals Map</button>
+            </a>
+            <a href="/" class="new-chat-button-link">
+                <button class="new-chat-button">Chat with X-Docter</button>
+            </a>
+            <!-- Sidebar content can be overridden in child templates -->
+            {% block sidebar %}{% endblock %}
+        </div>
+        <div class="chat-container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container-footer">
+            <p>Live-AI-X-Doctor in 2024 AI Hackathon</p>
+            <p>by <b> Qingqian Wang, Shanghui Yin, Yunze Zhang, Yongchang Liu </b> </p>
+        </div>
+        <p>Check out our project on GitHub <a href="https://github.com/Qingqian-Wang/Live-AI-X-Doctor"><i
+                    class="fa fa-github"></i></a></p>
+    </footer>
+    {% block additional_js %}{% endblock %}
+</body>
+
+</html>
