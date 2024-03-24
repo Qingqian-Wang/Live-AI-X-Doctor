@@ -27,6 +27,8 @@
     <div id="percentage-container" class="percentage-container">
         <p>{{ health_rating }}</p>
     </div>
+    <a href="{{url_for('update_number')}}" class="common-button">Update Number</a>
+
 </div>
 
 
@@ -76,7 +78,6 @@
     <!-- 添加按钮 -->
     &nbsp;&nbsp;&nbsp;&nbsp;
     <div class="buttons-container">
-        <a href="{{url_for('update_number')}}" class="common-button">Update Number</a>
         <button id="randomizeButton" class="common-button">Extracting vital signs</button>
     </div>
 
