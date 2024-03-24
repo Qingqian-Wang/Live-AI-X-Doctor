@@ -59,7 +59,6 @@ def diagnosis_result():
     new_data= "Hi, my gender is " + patient_gender + " and my current symptoms are descripted as following " + symptoms + " finally I got a diagnosis from hospital is following " + diagnosis + " please combine the diagnosis from the doctor, give me some suggestions. In the next reply, don't ask me question."
     content = interact_once(new_data, dataset, False)
     print(dataset)
-    print("fdsjifjsifjiofeijfiwejoifjewiofewifoiejfoeiwj" + health_rating)
     # Process the data here, for example, save it to a database or perform some calculations.
 
     # For now, we'll just render a simple confirmation page:
