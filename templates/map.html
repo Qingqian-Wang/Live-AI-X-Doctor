@@ -7,13 +7,9 @@
 {% endblock %}
 
 {% block additional_js %}
-<script>
-    const googleMapsApiKey = "{{ api_key }}";
-</script>
-<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap" async
-    defer></script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap"></script>
 {% endblock %}
 
 {% block content %}
