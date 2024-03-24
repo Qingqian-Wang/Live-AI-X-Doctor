@@ -3,29 +3,33 @@
 {% block title %}Chat Interface{% endblock %}
 
 {% block content %}
-    <div class="chat-interface">
-        {% for message in messages %}
-            {% if message.role == 'user' %}
-                You:
-                <div class="message user-message">{{ message.content }}</div>
-            {% else %}
-                AI Doctor:
-                <div class="message ai-message">{{ message.content }}</div>
-            {% endif %}
-        {% endfor %}
+<div class="chat-interface">
+    {% for message in messages %}
+    {% if message.role == 'user' %}
+    <div class="user-message-container message-container">
+        <div class="message user-message">{{ message.content }}</div>
+        <img src="{{ url_for('static', filename='img/patient.png') }}" alt="You" class="ai-doctor-image">
     </div>
-
-
-    <div id="percentage-container" class="percentage-container">
-        {{ health_rating }}
+    {% else %}
+    <div class="message-container ai-message-container">
+        <img src="{{ url_for('static', filename='img/ai-doctor.png') }}" alt="AI Doctor" class="ai-doctor-image">
+        <div class="ai-message">{{ message.content }}</div>
     </div>
-    <a href="{{url_for('update_number')}}" type="button" method="get" class="update-button">Update Number</a>
+    {% endif %}
+    {% endfor %}
+</div>
 
 
-    <div class="chat-footer">
-        <form action="{{ url_for('conversation_input') }}" method="post" class="message-form">
-            <textarea type="text" name="message" class="chat-input" placeholder="Your text here..."></textarea>
-            <button type="submit" class="send-button">Send</button>
-        </form>
-    </div>
+<div id="percentage-container" class="percentage-container">
+    {{ health_rating }}
+</div>
+<a href="{{url_for('update_number')}}" type="button" method="get" class="update-button">Update Number</a>
+
+
+<div class="chat-footer">
+    <form action="{{ url_for('conversation_input') }}" method="post" class="message-form">
+        <textarea type="text" name="message" class="chat-input" placeholder="Your text here..."></textarea>
+        <button type="submit" class="send-button">Send</button>
+    </form>
+</div>
 {% endblock %}

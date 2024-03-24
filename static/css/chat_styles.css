@@ -7,13 +7,16 @@ body {
 
 .container {
     display: flex;
-    flex-grow: 1; /* 允许内容区域填充剩余空间 */
+    flex-grow: 1;
+    /* 允许内容区域填充剩余空间 */
 }
 
 .sidebar {
     background-color: #2c3e50;
-    flex: 0 0 250px; /* 设置侧边栏宽度，不允许伸缩 */
-    height: auto; /* 调整高度为自动，以适应内容 */
+    flex: 0 0 250px;
+    /* 设置侧边栏宽度，不允许伸缩 */
+    height: auto;
+    /* 调整高度为自动，以适应内容 */
     color: #ecf0f1;
     padding: 10px;
     width: 250px;
@@ -26,8 +29,10 @@ a {
 
 .logo {
     display: block;
-    margin: 0 auto 20px; /* Centers the logo within the sidebar */
-    width: 80%; /* Ensures logo scales within the sidebar width */
+    margin: 0 auto 20px;
+    /* Centers the logo within the sidebar */
+    width: 80%;
+    /* Ensures logo scales within the sidebar width */
     height: auto;
 }
 
@@ -39,10 +44,12 @@ a {
     margin-bottom: 20px;
     color: #fff;
     cursor: pointer;
-    display: block; /* Ensures buttons are block-level for full-width */
+    display: block;
+    /* Ensures buttons are block-level for full-width */
     width: 100%;
     text-align: center;
-    font-size: 16px; /* Slightly larger font for readability */
+    font-size: 16px;
+    /* Slightly larger font for readability */
     font-weight: bold;
 }
 
@@ -174,36 +181,47 @@ a {
 
 .user-message {
     background-color: lightgray;
-    align-self: flex-start; /* Align to the right */
+    align-self: flex-start;
+    /* Align to the right */
 }
 
 .ai-message {
     background-color: lightblue;
-    align-self: flex-start; /* Align to the left */
+    align-self: flex-start;
+    /* Align to the left */
     max-width: 65%;
 }
 
 .chat-interface {
     display: flex;
     flex-direction: column;
+    /* 使得消息从上到下排列 */
+    align-items: flex-start;
+    /* 默认左对齐 */
 }
 
 .percentage-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 160px; /* Adjust the height as needed */
+    height: 160px;
+    /* Adjust the height as needed */
     width: 160px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
-    font-size: 5em; /* Adjust the font size as needed */
+    font-size: 5em;
+    /* Adjust the font size as needed */
     text-align: center;
-    position: fixed; /* 或者 absolute，取决于需求 */
-    top: 10px; /* 或者任何合适的值 */
-    right: 10px; /* 或者任何合适的值 */
-    z-index: 1000; /* 确保按钮显示在其他元素之上 */
+    position: fixed;
+    /* 或者 absolute，取决于需求 */
+    top: 10px;
+    /* 或者任何合适的值 */
+    right: 10px;
+    /* 或者任何合适的值 */
+    z-index: 1000;
+    /* 确保按钮显示在其他元素之上 */
 }
 
 .update-button {
@@ -213,3 +231,46 @@ a {
     cursor: pointer;
 }
 
+.ai-doctor-image {
+    width: 75px;
+    /* 设置图片宽度 */
+    height: 75px;
+    /* 设置图片高度 */
+    margin-right: 20px;
+    /* 图片和文本之间的间距 */
+}
+
+.ai-message {
+    background-color: #98FB98;
+    /* 消息背景颜色 */
+    padding: 10px;
+    /* 消息内边距 */
+    border-radius: 10px;
+    /* 消息边框圆角 */
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    margin-bottom: 10px;
+    /* 消息之间的间距 */
+    width: fit-content;
+    /* 容器宽度适应内容 */
+}
+
+.user-message-container {
+    justify-content: flex-end;
+    /* 用户消息靠右对齐 */
+    display: flex;
+    width: 100%;
+    /* 占满整个父容器宽度 */
+}
+
+.ai-message-container {
+    justify-content: flex-start;
+    /* AI消息靠左对齐 */
+    display: flex;
+    width: 100%;
+    /* 占满整个父容器宽度 */
+}
