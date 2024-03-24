@@ -1,22 +1,23 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Neighborhood Hospital</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <script src="../static/js/script.js" defer=""></script>
-    <script>
-        // Make the API key available as a JavaScript variable
-        const googleMapsApiKey = "{{ api_key }}";
-    </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&amp;libraries=places&amp;callback=initMap"
-        async defer></script>
-</head>
+{% block title %}Neighborhood Hospital{% endblock %}
 
-<body>
-    <h1>Find nearby Hospitals</h1>
-    <div id="map"></div>
-</body>
+{% block additional_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
 
-</html>
+{% block additional_js %}
+<script>
+    // Make the API key available as a JavaScript variable
+    const googleMapsApiKey = "{{ api_key }}";
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap" async defer></script>
+{% endblock %}
+
+{% block content %}
+<div id="title"><h1>Find nearby Hospitals</h1></div>
+
+<div id="map"></div> <!-- 给地图一个高度 -->
+{% endblock %}
