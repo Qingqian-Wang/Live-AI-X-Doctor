@@ -274,3 +274,34 @@ a {
     width: 100%;
     /* 占满整个父容器宽度 */
 }
+
+.bottom-right {
+    /* position: fixed; */
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* .bottom-right svg {
+        /* 根据需要调整SVG的大小 */
+width: 40px;
+height: 40px;
+margin-left:20px;
+}
+
+.bottom-right .number {
+    margin-left: 10px;
+    /* 数字和图标之间的距离 */
+}
+
+*/ .bottom-right img+.number {
+    margin-left: 10px;
+    /* 数字和前面的图标之间的距离 */
+}
+
+.bottom-right .number+img {
+    margin-left: 20px;
+    /* 图标和前面的数字之间的距离 */
+}
