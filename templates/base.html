@@ -7,6 +7,10 @@
     <title>{% block title %}Default Title{% endblock %}</title>
     <link rel="stylesheet" href="../static/css/chat_styles.css">
     <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <script>
+        const googleMapsApiKey = "{{ api_key }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
     {% block additional_css %}{% endblock %}
 </head>
