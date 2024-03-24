@@ -8,16 +8,18 @@
 
 {% block additional_js %}
 <script>
-    // Make the API key available as a JavaScript variable
     const googleMapsApiKey = "{{ api_key }}";
 </script>
 <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places&callback=initMap" async
+    defer></script>
 {% endblock %}
 
 {% block content %}
-<div id="title"><h1>Find nearby Hospitals</h1></div>
+<div id="title">
+    <h1>Find nearby Hospitals</h1>
+</div>
 
 <div id="map"></div> <!-- 给地图一个高度 -->
 {% endblock %}
