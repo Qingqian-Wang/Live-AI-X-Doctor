@@ -225,10 +225,27 @@ a {
 }
 
 .update-button {
-    margin-top: 20px;
+    display: inline-block;
     padding: 10px 20px;
+    background-color: #4CAF50;
+    /* 绿色背景 */
+    color: white;
+    /* 白色文字 */
+    text-align: center;
+    text-decoration: none;
     font-size: 16px;
-    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    /* 圆角边框 */
+    transition: background-color 0.3s, color 0.3s;
+    /* 过渡动画 */
+}
+
+.update-button:hover {
+    background-color: #45a049;
+    /* 鼠标悬停时的背景颜色 */
+    color: #fff;
+    /* 鼠标悬停时的文字颜色 */
 }
 
 .ai-doctor-image {
@@ -284,12 +301,7 @@ a {
 }
 
 
-/* .bottom-right svg {
-        /* 根据需要调整SVG的大小 */
-width: 40px;
-height: 40px;
-margin-left:20px;
-}
+
 
 .bottom-right .number {
     margin-left: 10px;
