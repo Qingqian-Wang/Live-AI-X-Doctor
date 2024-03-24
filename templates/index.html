@@ -51,6 +51,21 @@
     });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var input = document.querySelector('.chat-input'); // 获取文本域
+
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) { // 检查是否按下了Enter键且没有按下Shift键
+                e.preventDefault(); // 阻止默认操作（换行）
+                var form = document.querySelector('.message-form'); // 获取表单
+                form.submit(); // 提交表单
+            }
+        });
+    });
+</script>
+
+
 <div class="bottom-right">
     <img src="../static/image/thermometer-svgrepo-com.svg" alt="Icon" style="width: 40px; height: 40px;">
     <span class="number">38.7</span>
