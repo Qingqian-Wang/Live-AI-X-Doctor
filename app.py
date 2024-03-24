@@ -32,7 +32,10 @@ def conversation_input():
         print(content)
         print(dataset)
     return render_template('index.html')
-
+@app.route('/index')
+def index():
+    # 你的视图函数逻辑
+    return render_template('index.html')
 
 
 @app.route('/diagnosis-result', methods=['POST'])
