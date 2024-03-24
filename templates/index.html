@@ -15,6 +15,13 @@
         {% endfor %}
     </div>
 
+
+    <div id="percentage-container" class="percentage-container">
+        {{ health_rating }}
+    </div>
+    <a href="{{url_for('update_number')}}" type="button" method="get" class="update-button">Update Number</a>
+
+
     <div class="chat-footer">
         <form action="{{ url_for('conversation_input') }}" method="post" class="message-form">
             <textarea type="text" name="message" class="chat-input" placeholder="Your text here..."></textarea>

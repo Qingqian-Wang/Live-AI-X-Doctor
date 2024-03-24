@@ -187,3 +187,29 @@ a {
     display: flex;
     flex-direction: column;
 }
+
+.percentage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px; /* Adjust the height as needed */
+    width: 160px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 5em; /* Adjust the font size as needed */
+    text-align: center;
+    position: fixed; /* 或者 absolute，取决于需求 */
+    top: 10px; /* 或者任何合适的值 */
+    right: 10px; /* 或者任何合适的值 */
+    z-index: 1000; /* 确保按钮显示在其他元素之上 */
+}
+
+.update-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
