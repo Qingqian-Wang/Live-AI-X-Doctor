@@ -17,24 +17,29 @@ body {
     /* Adjust as necessary */
 }
 
+a {
+    text-decoration: none;
+}
+
 .logo {
     display: block;
-    margin-bottom: 20px;
-
-    width: 150px; /* Adjust as necessary */
+    margin: 0 auto 20px; /* Centers the logo within the sidebar */
+    width: 80%; /* Ensures logo scales within the sidebar width */
     height: auto;
 }
 
 .new-chat-button {
     background-color: #18bc9c;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border-radius: 4px;
     margin-bottom: 20px;
     color: #fff;
     cursor: pointer;
+    display: block; /* Ensures buttons are block-level for full-width */
+    width: 100%;
     text-align: center;
-    width: 200px;
+    font-size: 16px; /* Slightly larger font for readability */
     font-weight: bold;
 }
 
@@ -84,7 +89,7 @@ body {
 }
 
 .sender {
-    text-align: right;
+    text-align: left;
 }
 
 .sender .message {
@@ -139,22 +144,39 @@ body {
     /* Position from the bottom */
 }
 
-
 .site-footer {
     background-color: #7b7b7b;
-    /* 灰色背景 */
     color: #fffdfd;
-    /* 字体颜色 */
     text-align: center;
-    /* 文字居中 */
-    padding: 10px 0;
-    /* 上下填充 */
+    padding: 20px 0;
     margin-top: 20px;
-    /* 顶部外边距 */
 }
 
 .container-footer {
     margin: 0 auto;
     padding: 0 15px;
     /* 内边距 */
+}
+
+.message {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.user-message {
+    background-color: lightgray;
+    align-self: flex-start; /* Align to the right */
+}
+
+.ai-message {
+    background-color: lightblue;
+    align-self: flex-start; /* Align to the left */
+    max-width: 65%;
+}
+
+.chat-interface {
+    display: flex;
+    flex-direction: column;
 }

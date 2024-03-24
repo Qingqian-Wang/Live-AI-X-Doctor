@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 dataset = []
 
+
 @app.route('/map')
 def map():
     # Replace 'YOUR_ENV_VARIABLE' with the actual name of your environment variable
@@ -23,7 +24,6 @@ def diagnosis_page():
     return render_template('diagnosis.html')
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def conversation_input():
     if request.method == 'POST':
@@ -31,8 +31,7 @@ def conversation_input():
         content = interact_once(message, dataset)
         print(content)
         print(dataset)
-    return render_template('index.html')
-
+    return render_template('index.html', messages=dataset[1:])
 
 
 @app.route('/diagnosis-result', methods=['POST'])
